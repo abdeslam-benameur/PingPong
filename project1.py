@@ -30,7 +30,7 @@ paddle_b.goto(350, 0)
 
 # Ball
 ball = turtle.Turtle()
-ball.speed("slow")
+ball.speed(5)
 ball.shape("circle")
 ball.color("blue")
 ball.pendown()  # to avoid drawing the path of moving objects*
@@ -45,7 +45,7 @@ pen.speed(0)
 pen.color("yellow")
 pen.penup()
 pen.hideturtle()
-pen.goto(0,260)
+pen.goto(0, 260)
 pen.write("Player A: 0  Player B: 0", align="center", font=("Courier", 24, "normal"))
 
 
@@ -116,10 +116,10 @@ while True:
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
 
     # Paddle and ball collisions
-    if 340 < ball.xcor() < 350 and paddle_b.ycor() - 40 < ball.ycor() < paddle_b.ycor() + 40:
+    if 340 == ball.xcor() and paddle_b.ycor() - 40 < ball.ycor() < paddle_b.ycor() + 40:
         ball.setx(340)
         ball.dx *= -1
 
-    if -350 < ball.xcor() < -340 and (paddle_a.ycor() - 40 < ball.ycor() < paddle_a.ycor() + 40):
+    if -350 == ball.xcor() and (paddle_a.ycor() - 40 < ball.ycor() < paddle_a.ycor() + 40):
         ball.setx(-340)
         ball.dx *= -1
